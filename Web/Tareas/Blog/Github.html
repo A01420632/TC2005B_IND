@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Github</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Github</h1>
+
+    <p><em>En esta sección, se tratará el flujo de trabajo de Github y Git, así como los comandos de Git que se usan.</em>
+    </p>
+
+    <hr>
+
+    <h2>Flujo de trabajo</h2>
+
+    <ol>
+        <li><strong>Crear un repositorio</strong>
+            <ol>
+                <li>Ir a Github.com</li>
+                <li>Hacer clic en "New repository"</li>
+                <li>Configurar el repositorio</li>
+            </ol>
+        </li>
+        <li><strong>Clonar el repositorio</strong>
+            <ol>
+                <li>Ir a la sección de code</li>
+                <li>Copiar la URL del repositorio o la SSH Key</li>
+                <li>Ir a Git Bash</li>
+                <li>Ir al directorio en donde se quiere copiar el repositorio</li>
+                <li>Usar el comando <strong>git clone + "link/clave SSH"</strong></u></li>
+            </ol>
+        </li>
+        <li><strong>Entrar al repositorio</strong>
+            <ol>
+                <li>Ir a Git Bash</li>
+                <li>Usar el comando cd+"link del directorio en el que está el respositorio"</li>
+                <li>Si se quiere visualizar el contenido del repositorio, se puede usar el comando ls</li>
+                <li>Para ver todo el contenido con detalles/descripción: <strong>ls -al</strong></li>
+            </ol>
+        </li>
+        <li><strong>Hacer cambios</strong>
+            <ol>
+                <li>Si se quiere hacer cambios:</li>
+                    <ul>
+                        <li>Crear archivo: <strong>touch "nombre.tipo"</strong></li>
+                        <li>Editar archivos: <strong>vi "archivo"</strong></li>
+                        <li>Copiar archivo: <strong>cp</strong></li>
+                        <li>Borrar archivo: <strong>rm</strong></li>
+                        <li>Mover archivo: <strong>mv</strong>></li>
+                    </ul>
+                <li>Si se quiere visualizar un archivo:</li>
+                    <ul>
+                        <li>Mostrar 10 primeras líneas de un archivo: <strong>head</strong></li>
+                        <li>Mostrar 10 últimas líneas: <strong>tail</strong></li>
+                    </ul>
+                <li>Para más información, ir a: <a href="Terminal.html">Comandos de terminal</a></li>
+            </ol>
+        </li>
+        <li><strong>Git add, commit, push</strong>
+            <ol>
+            Una vez que se hicieron los cambios, se tienen que subir al repositorio en línea (<u>Los hechos a través de 
+            Git Bash son solo en el directorio hasta que se haga un push</u>)
+                <li>Para verificiar el status de nuestros cambios, usar el comando: <strong>git status</strong></li>
+                <li>Cuando se quiere preparar un archivo para subirlo al repo (staging area): <strong>git add + "nombre"</strong></li>
+                <li>Verificar si ya pasó a staging area: <strong>git status</strong></li>
+                <li>Posteriormente, se hace commit de los cambios que ya están terminados (se suben al repositorio local): <strong>git commit -m + "Descripción de cambios realizados"</strong></li>
+                <li>Verificar nuevamente el status para ver si se hizo el commit correctamente: <strong>git status</strong></li>
+                <li>Hacer un git push para actualizar los cambios en el repo: <strong>git push -u origin main</strong></li>
+                <li>A continuación una imagen que ilustra el proceso:</li>
+                    <img src="https://github.com/gilecheverria/github_fundamentals/raw/main/Activities/.images/4_clone/4_clone_4.png">
+            </ol>
+        </li>
+    </ol>
+
+    <h3>Lógica del flujo de trabajo en un repositorio: </h3>
+    <img src="https://github.com/gilecheverria/github_fundamentals/raw/main/Activities/.images/4_clone/4_clone_4.jpg">
+
+    <h2>Comandos de Git</h2>
+
+    <p>En esta sección se mostrarán los comandos de git a detalle</p>
+
+    <ol>
+        <li><strong>git status: </strong>Verifica el estado de los cambios</li>
+        <li><strong>git add: </strong>Se pasan los archivos al staging area</li>
+        <li><strong>git commit -m: </strong>Sube los cambios hechos al repositorio local</li>
+        <li><strong>git push -u origin: </strong>Sube los cambios hechos al repositorio en línea</li>
+        <li><strong>git pull origin: </strong>Se bajan los cambios del repositorio (branch main) en línea al local</li>
+        <li><strong>git pull origin "rama"</strong>Se bajan los cambios de la branch main a la rama</li>
+        <li><strong>git log: </strong>Visualizar el historial de commits</li>
+        <li><strong>git restore --staged: </strong>Regresa al directorio (unstage) al archivo</li>
+        <li><strong>git checkout -b "rama"</strong>Crea una rama y se traslada a ella</li>
+        <li><strong>git checkout "rama"</strong>Cambia de rama</li>
+        <li><strong>git switch: </strong>Misma función que la anterior</li>
+        <li><strong>git branch: </strong>Enlista las ramas existentes</li>
+        <li><strong>git branch -a: </strong>Enlista las ramas tanto locales como remotas</li>
+        <li><strong>git branch "rama": </strong>Crea una rama</li>
+        <li><strong>git merge "rama": </strong>Hace un merge de los cambios (<em>de la rama mencionada a la rama en la que te encuentras</em>)</li>
+        <li><strong>git branch -d "rama": </strong>Elimina la rama</li>
+        <li><strong>git branch -D "rama": </strong>Asegura que se borra la rama en caso de que fue un intento fallido y no importa que no se haya hecho merge</li>
+        <li><strong>git fetch prune--: </strong>Elimina el rastro que dejan las ramas después de ser eliminadas</li>
+        <li><strong>git push origin -d "rama": </strong>Después de eliminar una rama localmente, se hace un push para eliminarla del repositorio remoto</li>   
+    </ol>
+
+    <footer>
+        <a href="Main.html">Menú principal</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Terminal</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Comandos de terminal</h1>
+
+    <p>Un comando es <em>"un mensaje enviado al ordenador que provoca una respuesta en este sistema y se comporta como una orden"
+        Platzi (2023).</em></p>
+   
+        <a href="https://platzi.com/clases/2292-terminal/37343-que-es-un-comando/#:~:text=Un%20comando%20es%20un%20mensaje,la%20indicación%20que%20pueda%20enviarse." target="_blank">Fuente de consulta</a>
+       
+       <br/>
+       <br/>
+   
+       <hr>
+
+       <br/>
+
+       <table>
+           <tr>
+               <th>Comando</th>
+               <th>Funciones</th>
+               <th>Nota1</th>
+               <th>Nota2</th>
+           </tr>
+           <tr>
+               <td>pwd: Print working directory</td>
+               <td>Windows: /C/Users/nombre → Raíz: C</td>
+               <td>Mac: /users/nombre</td>
+               <td>Linux: /home/nombre → Raíz: “/”</td>
+           </tr>
+           <tr>
+               <td>
+                   cd: Change directory
+               </td>
+               <td>
+                   Cambia la ruta
+               </td>
+               <td>
+                   cd .. : Regresa al directorio/carpeta anterior
+               </td>
+           </tr>
+           <tr>
+               <td>ls: list</td>
+               <td>Archivos que tengo disponibles en la carpeta en la que estoy</td>
+               <td>ls -al: Todos los archivos en formato de lista</td>
+               <td>Los que tienen “.” adelante, son los no visibles (ocultos)</td>
+           </tr>
+           <tr>
+               <td>mkdir: Make directory</td>
+               <td>Crea una carpeta en donde estás ubicado</td>
+               <td>mkdir "nombre"</td>
+           </tr>
+           <tr>
+               <td>Shift+Insert</td>
+               <td>Copiar</td>
+           </tr>
+           <tr>
+               <td>Ctrl+Insert</td>
+               <td>Pegar</td>
+           </tr>
+           <tr>
+               <td>touch</td>
+               <td>Crear un archivo</td>
+           </tr>
+           <tr>
+               <td>vi</td>
+               <td>Editor de archivos</td>
+               <td>i: Insert (texto)</td>
+               <td>:wq → guardar y salir</td>
+           </tr>
+           <tr>
+               <td>cat</td>
+               <td>Concatenar archivo</td>
+               <td>Ver contenido de un archivo</td>
+           </tr>
+           <tr>
+               <td>clear</td>
+               <td>Limpia memoria</td>
+           </tr>
+           <tr>
+               <td>history</td>
+               <td>Limpia comandos</td>
+           </tr>
+           <tr>
+               <td>code .</td>
+               <td>Abre VS code en la carpeta en la que estás</td>
+               <td>code "archivo": abre archivo en VS code</td>
+           </tr>
+           <tr>
+               <td>cp</td>
+               <td>Copiar archivo</td>
+               <td>cp “archivo a copiar” “en donde pegar”</td>
+           </tr>
+           <tr>
+               <td>rm</td>
+               <td>Borrar archivo</td>
+               <td>rm “lo que vas a borrar”</td>
+           </tr>
+           <tr>
+               <td>rm -r</td>
+               <td>Borra directorio</td>
+               <td>Lo hace de manera recursiva</td>
+           </tr>
+           <tr>
+               <td>rm -rf</td>
+               <td>Forzar eliminación del directorio</td>
+               <td>rm -rf /</td>
+           </tr>
+           <tr>
+               <td>rm *</td>
+               <td>Borrar tipo de archivo</td>
+               <td>rm *."tipo de archivo a eliminar"</td>
+           </tr>
+           <tr>
+               <td>mv</td>
+               <td>Mover archivo</td>
+               <td>mv *.”tipo archivo a buscar</td>
+           </tr>
+           <tr>
+               <td>touch {1..10}.cpp</td>
+               <td>Crea 10 archivos tipo cpp en la carpeta</td>
+               <td>touch {1..10}.nombre de archvio</td>
+           </tr>
+           <tr>
+               <td>head</td>
+               <td>Muestra primeras 10 líneas de un archivo</td>
+               <td>head “nombre” -n 5</td>
+               <td>Primeras 5 líneas</td>
+           </tr>
+           <tr>
+               <td>tail</td>
+               <td>Muestra últimas 10 líneas de un archivo</td>
+           </tr>
+           <tr>
+               <td>less</td>
+               <td>Muestra archivo de a poco</td>
+               <td>Moverse con espacio</td>
+           </tr>
+       </table>
+
+       <br/>
+       <footer>
+        <a href="Main.html">Menú principal</a>
+    </footer>
+</body>
