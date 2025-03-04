@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../css/blog_css.css">
+    <title>Bienvenida</title>
+</head>
+<body>
+    <header>
+        <h1>CSS</h1>
+    </header>
+
+    <main>
+        <h1>¿Qué es CSS?</H1>
+        <p><b>CSS</b> <em>"es un lenguaje {...} que nos permite agregar diseño y maquetación a nuestras páginas, y nos permite compartir esos estilos de un elemento a otro y de una página a otra" (Howe S., s.f).</em> </p>
+    </main>
+
+    <div>
+        <div>
+            <h1>Conceptos básicos</h1>
+        </div>
+        <div>
+            <h2>Selectores</h2>
+            <p>Un selector designa a qué sección o elemento se le va a aplicar el estilo en CSS.
+                <br>
+                Los selectores pueden señalar un valor/atributo (id o clase por ejemplo) o un elemento (encabezado h1 o parráfo p por ejemplo).
+            </p>
+        </div>
+        <div>
+            <h2>Propiedades</h2>
+            <p>Las propiedades son los atributos que se le asignan a los selectores.
+                <br>
+                Por ejemplo, si se quiere cambiar el color de un texto, se puede utilizar la propiedad <em>"color"</em>.
+            </p>
+        </div>
+        <div>
+            <h2>Valores</h2>
+            <p>Los valores son los atributos que se le asignan a las propiedades.
+                <br>
+                Por ejemplo, si se quiere cambiar el color de un texto a rojo, se puede utilizar el valor <em>"red"</em>.
+            </p>
+        </div>
+        <div>
+            <h2>Ejemplo</h2>
+            <code><strong><b>p</b></strong>{
+                <br>
+                color: orange;
+                <br>
+                font-size: 16px;
+                <br>
+                }
+            </code>
+
+        </div>
+
+        <div>
+            <div>
+                <h1>Tipos de selectores</h1>
+            </div>
+            <div>
+                <h2>Selectores de tipo</h2>
+                <p>
+                    Se pueden utilizar para cambiar el estilo de todos los elementos de un tipo en particular.
+                    <br>
+                    Entre los elementos que puede editar son: <b>a, div, span, strong, em, h1-h6 y p</b>.
+                    <br>
+                    Ejemplo: <code><br>
+                        <strong><b>p</b></strong>{
+                        <br>
+                        color: blue;
+                        <br>
+                        }</code>
+                </p>
+            </div>
+            <div>
+                <h2>Selectores de clase</h2>
+                <p>
+                    Se pueden utilizar para cambiar el estilo de todos los elementos que tengan una clase en particular.
+                    <br>
+                    Ejemplo: <code><br>
+                        <strong><b>.clase</b></strong>{
+                        <br>
+                        color: green;
+                        <br>
+                        }</code>
+                </p>
+            </div>
+            <div>
+                <h2>Selectores de id</h2>
+                <p>
+                    Se pueden utilizar para cambiar el estilo de un solo elemento que tenga un id en particular.
+                    <br>
+                    Ejemplo: <code><br>
+                        <strong><b>#id</b></strong>{
+                        <br>
+                        color: red;
+                        <br>
+                        }</code>
+            </div>
+        </div>
+        <div>
+            <h1>Puntos de especificidad</h1>
+            <p>
+                Los puntos de especificidad son los que determinan cuál estilo se aplica a un elemento en caso de que haya conflictos.
+                <br>
+                Los selectores de id tienen más peso que los de clase, y los de clase tienen más peso que los de tipo.
+                <br>
+                Los puntos de especifidad se miden de la siguiente manera:
+                <br>
+                <ul>
+                    <li>Selectores tipo: 0-0-1</li>
+                    <li>Selectores clase: 0-1-0</li>
+                    <li>Selectores id: 1-0-0</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+    
+    <footer>
+        <a href="Main.html">Menú principal</a>
+    </footer>
+</body>
