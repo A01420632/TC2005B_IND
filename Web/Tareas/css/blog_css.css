@@ -1,5 +1,5 @@
 body{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 header{
@@ -9,11 +9,19 @@ header{
     text-align: center;
 }
 
+.main{
+    background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20210723050322/Lineargradient2-660x322.png');
+    background-size:cover;
+    
+}
+
 main{
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
     border: 3px solid;
+    background-image: url('https://img.freepik.com/free-vector/minimalist-gradient-background-design-template_483537-2810.jpg');
+    background-size:cover;
 }
 
 main h1{
@@ -26,6 +34,8 @@ article{
     padding: 10px;
     border-radius: 10px;
     border: 3px solid;
+    background-image: url('https://img.freepik.com/free-vector/minimalist-gradient-background-design-template_483537-2810.jpg');
+    background-size:cover;
 }
 
 div h1{
@@ -42,7 +52,9 @@ div h2{
     border-right: 5px solid;
     border-top: 5px solid;
     border-bottom: 5px solid;
-    text-align: center
+    text-align: center;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTES8STnways6m0KOEiYHKKogyBnFwtAMGzFw&s');
+    background-size:cover;
 }
 
 nav ul{
@@ -50,20 +62,45 @@ nav ul{
 }
 
 #indexB{
-    overflow: scroll;
+    overflow-y: auto;
+    max-height: 300px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 80%;
+    height: auto;
 }
 
 footer img{
-    display: block;
     margin: 10px auto;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 
-table, th, td {
-    border: 1px solid black;
+table {
+    width: 80%;
+    margin: 20px auto;
     border-collapse: collapse;
-    padding: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
 }
 
 strong{
