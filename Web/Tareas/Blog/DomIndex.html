@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../css/eventos_dom.css">
+    <script type="module" src="../js/eventos_dom.js"></script>
+    <title>Eventos y Dom</title>
+</head>
+
+<body>
+    <h1>Eventos y DOM y ChatGPT</h1>
+
+    <div class="container">
+        <h2>Instrucciones</h2>
+        <p>Utiliza ChatGPT y github Copilot para resolver la siguiente actividad. Antes de hacer los ejercicios, contesta las siguientes preguntas. Pregúntale a ChatGPT las preguntas, y verifica que lo que haya generado es correcto. Cuando sea necesario, agrega un ejemplo de código. Incluye una fuente que valide o invalide lo que generó. Agrega elementos de HTML con tus respuestas. (<b>Protip</b>: usa ChatGPT para que las respuestas las ponga directamente en elementos de html.)</p>
+
+        <p>Terminando las preguntas y los ejercicios, documenta tu experiencia con las herramientas en la sección de conclusiones. </p>
+    </div>
+
+    <div class="container">
+        <h3>Preguntas</h3>
+        <ol>
+            <li>
+                <strong>¿Qué es el DOM?</strong>
+                <p>El DOM (Document Object Model) es una representación estructurada en forma de árbol de un documento HTML o XML que permite a los programas acceder y manipular el contenido, estructura y estilos de una página web. Actúa como una interfaz de programación que conecta las páginas web con scripts o lenguajes de programación.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de acceso al DOM
+document.getElementById("ejemplo").innerHTML = "Nuevo contenido";
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction" target="_blank">MDN Web Docs - Introducción al DOM</a></em></p>
+                <p>Según la especificación oficial del W3C, el DOM no solamente define la estructura de los documentos, sino también el comportamiento de éstos y una forma estándar de acceso que permite que lenguajes de programación (no solo JavaScript) puedan interactuar con el documento de manera consistente en diferentes plataformas y navegadores.</p>
+                <p><em>Fuente adicional: <a href="https://www.w3.org/TR/DOM-Level-3-Core/" target="_blank">W3C DOM Standard</a></em></p>
+                
+                <!-- DOM Tree Diagram -->
+                <div class="dom-diagram">
+                    <h4>Estructura del DOM</h4>
+                    <div class="tree">
+                        <div class="node document">
+                            <span>Document</span>
+                            <div class="children">
+                                <div class="node element">
+                                    <span>HTML</span>
+                                    <div class="children">
+                                        <div class="node element">
+                                            <span>HEAD</span>
+                                            <div class="children">
+                                                <div class="node element">
+                                                    <span>TITLE</span>
+                                                    <div class="children">
+                                                        <div class="node text">
+                                                            <span>"Mi Página"</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="node element">
+                                            <span>BODY</span>
+                                            <div class="children">
+                                                <div class="node element">
+                                                    <span>DIV</span>
+                                                    <div class="children">
+                                                        <div class="node element">
+                                                            <span>P</span>
+                                                            <div class="children">
+                                                                <div class="node text">
+                                                                    <span>"Contenido"</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="diagram-caption">Fig 1: Representación del DOM como un árbol de nodos que estructuran un documento HTML.</p>
+                </div>
+            </li>
+            <li>
+                <strong>¿Qué es un nodo?</strong>
+                <p>Un nodo es cualquier objeto individual dentro del árbol del DOM. Existen varios tipos de nodos, siendo los más comunes: elementos (como &lt;div&gt;, &lt;p&gt;), atributos, texto, comentarios y el documento mismo. Cada nodo puede tener nodos padres, hermanos y/o hijos, formando así la estructura jerárquica del DOM.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de navegación entre nodos
+let padre = documento.body;
+let primerHijo = padre.firstChild;
+let siguienteHermano = primerHijo.nextSibling;
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Node" target="_blank">MDN Web Docs - Node</a></em></p>
+                <p>Según JavaScript.info, en el DOM hay 12 tipos de nodos, pero en la práctica generalmente trabajamos con los 4 principales: Document (nodo raíz), Element (etiquetas HTML), Text (contenido textual) y Comment (comentarios). Cada tipo de nodo tiene propiedades diferentes y una adecuada manipulación de ellos permite optimizar el rendimiento de las aplicaciones web.</p>
+                <p><em>Fuente adicional: <a href="https://javascript.info/dom-nodes" target="_blank">JavaScript.info - DOM Nodes</a></em></p>
+            </li>
+            <li>
+                <strong>¿Cómo se accede a un elemento del DOM?</strong>
+                <p>Se puede acceder a elementos del DOM mediante varios métodos, entre los más utilizados están:</p>
+                <pre><code class="language-javascript">
+// Por ID
+const elemento = document.getElementById('miId');
+
+// Por clase (devuelve una colección)
+const elementos = document.getElementsByClassName('miClase');
+
+// Por etiqueta (devuelve una colección)
+const parrafos = document.getElementsByTagName('p');
+
+// Usando selectores CSS (primer coincidencia)
+const primerElemento = document.querySelector('.miClase');
+
+// Usando selectores CSS (todas las coincidencias)
+const todosLosElementos = document.querySelectorAll('div.miClase');
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelector" target="_blank">MDN Web Docs - Métodos de selección</a></em></p>
+            </li>
+            <li>
+                <strong>¿Cómo se modifica un elemento del DOM?</strong>
+                <p>Los elementos del DOM pueden modificarse de varias maneras:</p>
+                <pre><code class="language-javascript">
+// Modificar contenido
+elemento.textContent = "Nuevo texto";  // Solo texto
+elemento.innerHTML = "Texto con <strong>HTML</strong>";  // Incluye HTML
+
+// Modificar atributos
+elemento.setAttribute("class", "nueva-clase");
+elemento.id = "nuevoId";
+
+// Modificar estilos
+elemento.style.color = "red";
+elemento.style.backgroundColor = "#f0f0f0";
+
+// Agregar/eliminar clases
+elemento.classList.add("nueva-clase");
+elemento.classList.remove("vieja-clase");
+elemento.classList.toggle("clase-toggle");
+
+// Crear y añadir elementos
+const nuevoElemento = document.createElement("div");
+nuevoElemento.textContent = "Soy nuevo";
+elemento.appendChild(nuevoElemento);
+
+// Eliminar elementos
+elemento.removeChild(elemento.childNodes[0]);
+// o
+elementoAEliminar.parentNode.removeChild(elementoAEliminar);
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Element" target="_blank">MDN Web Docs - Element</a></em></p>
+                <p>Según Eloquent JavaScript, cuando se modifican elementos del DOM, es importante considerar el impacto en el rendimiento de la página. Las operaciones que causan un recálculo del diseño (reflow) son costosas, especialmente en bucles. Una técnica óptima es utilizar fragmentos de documentos para construir estructuras complejas fuera del DOM y luego insertarlas de una sola vez:</p>
+                <pre><code class="language-javascript">
+// Uso de DocumentFragment para operaciones por lotes
+const fragment = document.createDocumentFragment();
+for (let i = 0; i < 1000; i++) {
+    const newElement = document.createElement("li");
+    newElement.textContent = `Elemento ${i}`;
+    fragment.appendChild(newElement);
+}
+// Solo un reflow ocurre con esta única operación
+document.getElementById("lista").appendChild(fragment);
+                </code></pre>
+                <p><em>Fuente adicional: <a href="https://eloquentjavascript.net/14_dom.html" target="_blank">Eloquent JavaScript - Manipulación del DOM</a></em></p>
+            </li>
+            <li>
+                <strong>¿Cuál es la diferencia entre getElementby* y querySelector*?</strong>
+                <p>Las principales diferencias son:</p>
+                <ul>
+                    <li><strong>Selectores</strong>: getElementBy* usa identificadores específicos (ID, clase, etiqueta), mientras que querySelector* usa selectores CSS más flexibles.</li>
+                    <li><strong>Retorno</strong>: getElementBy* devuelve colecciones HTML vivas (que se actualizan automáticamente), mientras que querySelector* devuelve NodeList estáticas.</li>
+                    <li><strong>Rendimiento</strong>: getElementBy* suele ser más rápido, pero querySelector* ofrece mayor flexibilidad.</li>
+                    <li><strong>Compatibilidad</strong>: getElementBy* tiene mayor compatibilidad con navegadores antiguos.</li>
+                </ul>
+                <pre><code class="language-javascript">
+// getElementBy* - devuelve colección viva
+const divs = document.getElementsByTagName('div');
+// Si se añade un nuevo div, 'divs' se actualiza automáticamente
+
+// querySelector* - devuelve NodeList estática
+const divs2 = document.querySelectorAll('div');
+// Si se añade un nuevo div, 'divs2' NO se actualiza
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll#Differences_from_other_selector_methods" target="_blank">MDN Web Docs - Diferencias en métodos de selección</a></em></p>
+                <p>Según CSS-Tricks, aunque getElementBy* puede ser ligeramente más rápido en algunos casos, querySelector* ofrece una sintaxis más consistente y poderosa que se alinea con las habilidades que los desarrolladores ya tienen con CSS. Esto hace que querySelector* sea generalmente preferido en el desarrollo moderno, especialmente cuando se necesitan selectores complejos.</p>
+                <pre><code class="language-javascript">
+// Ejemplos de selectores complejos con querySelector
+// Seleccionar el tercer li dentro de un ul con clase "menu"
+const item = document.querySelector("ul.menu li:nth-child(3)");
+
+// Seleccionar elementos con atributos específicos
+const inputs = document.querySelectorAll("input[type='text'][data-valid='true']");
+                </code></pre>
+                <p><em>Fuente adicional: <a href="https://css-tricks.com/dom/" target="_blank">CSS-Tricks - DOM</a></em></p>
+            </li>
+            <li>
+                <strong>¿Qué es un evento?</strong>
+                <p>Un evento es una acción o ocurrencia que sucede en el navegador o que es iniciada por el usuario, como hacer clic en un botón, cargar una página, mover el ratón o presionar una tecla. Los eventos son la base de la interactividad en JavaScript, permitiendo crear sitios web dinámicos que responden a las acciones del usuario.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de evento de clic
+document.getElementById("miBoton").addEventListener("click", function() {
+    alert("¡Has hecho clic en el botón!");
+});
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/Events" target="_blank">MDN Web Docs - Referencia de eventos</a></em></p>
+                <p>JavaScript.info añade que los eventos siguen un flujo de tres fases: captura (desde la raíz al elemento objetivo), objetivo (el elemento donde ocurrió el evento) y burbujeo (desde el elemento objetivo hacia la raíz). Este modelo de propagación permite implementar patrones como la delegación de eventos, donde un solo listener en un contenedor puede manejar eventos de múltiples elementos hijos.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de delegación de eventos
+document.getElementById("lista").addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+        alert("Has hecho clic en un elemento de la lista: " + event.target.textContent);
+    }
+});
+                </code></pre>
+                <p><em>Fuente adicional: <a href="https://javascript.info/bubbling-and-capturing" target="_blank">JavaScript.info - Bubbling and Capturing</a></em></p>
+            </li>
+            <li>
+                <strong>¿Qué es un listener?</strong>
+                <p>Un listener (o escuchador de eventos) es una función que "escucha" y responde cuando ocurre un evento específico. Se registra para un elemento del DOM y un tipo de evento concreto, y se ejecuta automáticamente cuando ese evento ocurre.</p>
+                <pre><code class="language-javascript">
+// Agregar un listener de evento
+elemento.addEventListener("click", funcionManejadora);
+
+// Ejemplo con función anónima
+document.getElementById("miEnlace").addEventListener("mouseover", function(event) {
+    console.log("El mouse está sobre el enlace");
+    event.preventDefault(); // Prevenir comportamiento predeterminado
+});
+
+// Eliminar un listener
+elemento.removeEventListener("click", funcionManejadora);
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener" target="_blank">MDN Web Docs - addEventListener</a></em></p>
+            </li>
+            <li>
+                <strong>¿Qué es un callback?</strong>
+                <p>Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que se complete alguna operación o evento. En el contexto del DOM, los callbacks se utilizan comúnmente como manejadores de eventos, ejecutándose cuando ocurre un evento específico.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de callback como manejador de eventos
+function saludar(nombre) {
+    alert("Hola, " + nombre);
+}
+
+document.getElementById("boton").addEventListener("click", function() {
+    saludar("Usuario"); // saludar es llamada como callback después del clic
+});
+
+// Otro ejemplo común: setTimeout con callback
+setTimeout(function() {
+    console.log("Este mensaje aparece después de 2 segundos");
+}, 2000);
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Glossary/Callback_function" target="_blank">MDN Web Docs - Función de callback</a></em></p>
+            </li>
+            <li>
+                <strong>¿Qué es un objeto de evento?</strong>
+                <p>Un objeto de evento es un objeto que se crea automáticamente cuando ocurre un evento y se pasa como parámetro a la función manejadora del evento. Contiene información sobre el evento que ocurrió, como el tipo de evento, el elemento objetivo, coordenadas del mouse, teclas presionadas, etc.</p>
+                <pre><code class="language-javascript">
+// Accediendo a información del objeto evento
+document.addEventListener("click", function(event) {
+    console.log("Tipo de evento: " + event.type);
+    console.log("Elemento objetivo: ", event.target);
+    console.log("Coordenadas: " + event.clientX + ", " + event.clientY);
+    
+    // Detener la propagación del evento
+    event.stopPropagation();
+    
+    // Prevenir el comportamiento predeterminado
+    event.preventDefault();
+});
+                </code></pre>
+                <p><em>Fuente: <a href="https://developer.mozilla.org/es/docs/Web/API/Event" target="_blank">MDN Web Docs - Event</a></em></p>
+                <p>Según la documentación de Google Developers sobre rendimiento web, es importante manejar los objetos de evento de manera eficiente. Cuando trabajamos con eventos que pueden dispararse frecuentemente (como mousemove o scroll), debemos implementar técnicas de "throttling" o "debouncing" para limitar la frecuencia con que procesamos estos eventos y evitar problemas de rendimiento.</p>
+                <pre><code class="language-javascript">
+// Ejemplo de debouncing para eventos frecuentes
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        const context = this;
+        const args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
+
+// Usar el debounce con un evento de scroll
+window.addEventListener("scroll", debounce(function(e) {
+    console.log("Scroll procesado una vez después de detenerse");
+}, 150));
+                </code></pre>
+                <p><em>Fuente adicional: <a href="https://developers.google.com/web/fundamentals/performance/rendering/debounce-your-input-handlers" target="_blank">Google Developers - Debounce Your Input Handlers</a></em></p>
+            </li>
+        </ol>        
+    </div>
+
+    <div class="container">
+        <h3>Referencias Bibliográficas y Fuentes de Consulta</h3>
+        <ul class="references">
+            <li>CSS-Tricks. (2023). <i>A Bunch of Options for Looping Over querySelectorAll NodeLists</i>. Recuperado de <a href="https://css-tricks.com/dom/" target="_blank">https://css-tricks.com/dom/</a></li>
+            
+            <li>Google Developers. (2022). <i>Web Fundamentals: Constructing the Object Model</i>. Recuperado de <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model" target="_blank">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model</a></li>
+            
+            <li>Google Developers. (2022). <i>Debounce Your Input Handlers</i>. Recuperado de <a href="https://developers.google.com/web/fundamentals/performance/rendering/debounce-your-input-handlers" target="_blank">https://developers.google.com/web/fundamentals/performance/rendering/debounce-your-input-handlers</a></li>
+            
+            <li>Haverbeke, M. (2023). <i>Eloquent JavaScript: A Modern Introduction to Programming</i> (3rd ed.). No Starch Press. Recuperado de <a href="https://eloquentjavascript.net/14_dom.html" target="_blank">https://eloquentjavascript.net/14_dom.html</a></li>
+            
+            <li>JavaScript.info. (2023). <i>Document Object Model</i>. The Modern JavaScript Tutorial. Recuperado de <a href="https://javascript.info/dom-nodes" target="_blank">https://javascript.info/dom-nodes</a></li>
+            
+            <li>JavaScript.info. (2023). <i>Bubbling and Capturing</i>. The Modern JavaScript Tutorial. Recuperado de <a href="https://javascript.info/bubbling-and-capturing" target="_blank">https://javascript.info/bubbling-and-capturing</a></li>
+            
+            <li>Mozilla Developer Network. (2023). <i>Document Object Model (DOM)</i>. MDN Web Docs. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model" target="_blank">https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model</a></li>
+            
+            <li>Mozilla Developer Network. (2023). <i>Introduction to events</i>. MDN Web Docs. Recuperado de <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" target="_blank">https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events</a></li>
+            
+            <li>Mozilla Developer Network. (2023). <i>Node</i>. MDN Web Docs. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/API/Node" target="_blank">https://developer.mozilla.org/es/docs/Web/API/Node</a></li>
+            
+            <li>Mozilla Developer Network. (2023). <i>Event</i>. MDN Web Docs. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/API/Event" target="_blank">https://developer.mozilla.org/es/docs/Web/API/Event</a></li>
+            
+            <li>Verou, L. (2021). <i>CSS Secrets: Better Solutions to Everyday Web Design Problems</i> (2nd ed.). O'Reilly Media. Recuperado de <a href="https://www.oreilly.com/library/view/css-secrets/9781449372736/" target="_blank">https://www.oreilly.com/library/view/css-secrets/9781449372736/</a></li>
+            
+            <li>World Wide Web Consortium. (2004). <i>Document Object Model (DOM) Level 3 Core Specification</i>. W3C Recommendation. Recuperado de <a href="https://www.w3.org/TR/DOM-Level-3-Core/" target="_blank">https://www.w3.org/TR/DOM-Level-3-Core/</a></li>
+            
+            <li>Zakas, N. C. (2020). <i>Understanding ECMAScript 6: The Definitive Guide for JavaScript Developers</i>. No Starch Press. Recuperado de <a href="https://leanpub.com/understandinges6" target="_blank">https://leanpub.com/understandinges6</a></li>
+        </ul>
+    </div>
+
+    <h3>Ejercicios de código</h3>
+    <p>Usa ChatGPT y copilot para resolver los ejercicios. Por cada ejercicio, pídele a ChatGPT o a copilot que te genere los comentarios. Verifica los resultados antes de subirlos a tu repo.</p>
+
+    <div class="container">
+        <p>1. Modifica el siguiente elemento para mostrar la posición del mouse en el documento:</p>
+        <p id="mousePosition">Posición del mouse: </p>
+        
+        <script>
+            // Exercise 1: Display mouse position
+            // This event listener tracks mouse movement across the entire document
+            // and updates the text content of the mousePosition element with current coordinates
+            document.addEventListener('mousemove', function(event) {
+                // Get x and y coordinates from the event object
+                const x = event.clientX;
+                const y = event.clientY;
+                
+                // Update the content of the element with formatted position
+                document.getElementById('mousePosition').textContent = `Posición del mouse: X: ${x}, Y: ${y}`;
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <p>2. Al dar click al siguiente botón, obtén el nombre y apellido de las siguientes cajas de texto, y agrega, después del botón, un elemento que tenga el nombre completo.</p>
+        <form id="form1">
+            First name: <input id="form-fname" type="text" name="fname" ><br>
+            Last name: <input id="form-lname" type="text" name="lname" ><br><br>
+        <input id="form1-submit" type="submit" value="Submit">
+        </form>
+        
+        <script>
+            // Exercise 2: Combine first and last name when form is submitted
+            // Prevents default form submission and creates a new element with the full name
+            document.getElementById('form1').addEventListener('submit', function(event) {
+                // Prevent form from submitting and refreshing the page
+                event.preventDefault();
+                
+                // Get values from form inputs
+                const firstName = document.getElementById('form-fname').value;
+                const lastName = document.getElementById('form-lname').value;
+                
+                // Remove previous result if exists
+                const existingResult = document.getElementById('fullname-result');
+                if (existingResult) {
+                    existingResult.remove();
+                }
+                
+                // Create a new paragraph element to display the full name
+                const fullNameElement = document.createElement('p');
+                fullNameElement.id = 'fullname-result';
+                fullNameElement.textContent = `Nombre completo: ${firstName} ${lastName}`;
+                
+                // Insert the new element after the form
+                this.after(fullNameElement);
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <p>3. Agrega el código para agregar una fila, o una columna, a la siguiente tabla al dar click al botón correspondiente.</p>
+        <table id="sampleTable">
+            <tr>
+                <td>Row 1 column 1</td>
+                <td>Row 1 column 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 column 1</td>
+                <td>Row 2 column 2</td>
+            </tr>
+        </table><br>
+        <input id="btn-insert-r" type="button" value="Insert row">
+        <input id="btn-insert-c" type="button" value="Insert column">
+        
+        <script>
+            // Exercise 3: Add row or column to table functionality
+            
+            // Event listener for the "Insert row" button
+            document.getElementById('btn-insert-r').addEventListener('click', function() {
+                // Get the table and determine how many columns it has
+                const table = document.getElementById('sampleTable');
+                const columnCount = table.rows[0].cells.length;
+                
+                // Create a new row
+                const newRow = table.insertRow();
+                
+                // Add cells to the new row
+                for (let i = 0; i < columnCount; i++) {
+                    const cell = newRow.insertCell();
+                    // Set content with the new row number and column number
+                    const rowCount = table.rows.length;
+                    cell.textContent = `Row ${rowCount} column ${i+1}`;
+                }
+            });
+            
+            // Event listener for the "Insert column" button
+            document.getElementById('btn-insert-c').addEventListener('click', function() {
+                // Get the table and all its rows
+                const table = document.getElementById('sampleTable');
+                const rows = table.rows;
+                
+                // Add a new cell to each row
+                for (let i = 0; i < rows.length; i++) {
+                    const cell = rows[i].insertCell();
+                    // Set content with the row number and new column number
+                    const columnCount = rows[i].cells.length;
+                    cell.textContent = `Row ${i+1} column ${columnCount}`;
+                }
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <p>4. Incluye dos cajas de input, para solicitar al usuario la posición de la fila y columna de la siguiente tabla, y otra para solicitar un texto. Al apretar el botón, actualiza el contenido de esa tabla en la posición que solicitaste, con la cadena de texto que solicitaste.</p>
+        <table id="myTable">
+            <tr>
+                <td>Row1 cell1</td>
+                <td>Row1 cell2</td>
+                <td>Row1 cell3</td>
+            </tr>
+            <tr>
+                <td>Row2 cell1</td>
+                <td>Row2 cell2</td>
+                <td>Row2 cell3</td>
+            </tr>
+            <tr>
+                <td>Row3 cell1</td>
+                <td>Row3 cell2</td>
+                <td>Row3 cell3</td>
+            </tr>
+            </table><form><br>
+            <input id="rowIndex" type="text" placeholder="Row Index">
+            <input id="colIndex" type="text" placeholder="Col Index">
+            <input id="newValue" type="text" placeholder="New Value">
+            <input id="btn-change" type="button" value="Change content">
+        
+        <script>
+            // Exercise 4: Update specific table cell content
+            document.getElementById('btn-change').addEventListener('click', function() {
+                // Get input values
+                const rowIndex = parseInt(document.getElementById('rowIndex').value);
+                const colIndex = parseInt(document.getElementById('colIndex').value);
+                const newValue = document.getElementById('newValue').value;
+                
+                // Get the table
+                const table = document.getElementById('myTable');
+                
+                // Validate row and column indices
+                if (isNaN(rowIndex) || isNaN(colIndex) || 
+                    rowIndex < 0 || rowIndex >= table.rows.length || 
+                    colIndex < 0 || colIndex >= table.rows[0].cells.length) {
+                    alert('Por favor ingrese índices válidos para la fila y columna');
+                    return;
+                }
+                
+                // Update the cell content
+                table.rows[rowIndex].cells[colIndex].textContent = newValue;
+                
+                // Clear input fields
+                document.getElementById('rowIndex').value = '';
+                document.getElementById('colIndex').value = '';
+                document.getElementById('newValue').value = '';
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <p>5. Agrega el código para quitar o agregar elementos a la lista de opciones. Los colores pueden ser aleatorios.</p>
+        <form>
+            <select id="colorSelect">
+                <option>Red</option>
+                <option>Green</option>
+                <option>White</option>
+                <option>Black</option>
+            </select>
+            <input id="btn-add-color" type="button" value="Add color">
+            <input id="btn-rmv-color" type="button" value="Remove color">
+        </form>
+        
+        <script>
+            // Exercise 5: Add or remove colors from dropdown
+            
+            // Array of possible colors to add randomly
+            const colors = [
+                'Blue', 'Yellow', 'Purple', 'Pink', 'Orange', 
+                'Brown', 'Gray', 'Cyan', 'Magenta', 'Lime', 
+                'Olive', 'Navy', 'Teal', 'Aqua', 'Violet'
+            ];
+            
+            // Event listener for adding a color
+            document.getElementById('btn-add-color').addEventListener('click', function() {
+                const colorSelect = document.getElementById('colorSelect');
+                
+                // Get a random color from our array that isn't already in the dropdown
+                let availableColors = colors.filter(color => {
+                    for (let i = 0; i < colorSelect.options.length; i++) {
+                        if (colorSelect.options[i].text === color) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+                
+                // If we have available colors, add one randomly
+                if (availableColors.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * availableColors.length);
+                    const randomColor = availableColors[randomIndex];
+                    
+                    // Create and add the new option
+                    const newOption = document.createElement('option');
+                    newOption.text = randomColor;
+                    colorSelect.add(newOption);
+                } else {
+                    alert('No hay más colores disponibles para agregar.');
+                }
+            });
+            
+            // Event listener for removing a color
+            document.getElementById('btn-rmv-color').addEventListener('click', function() {
+                const colorSelect = document.getElementById('colorSelect');
+                
+                // Check if there are options to remove
+                if (colorSelect.options.length > 0) {
+                    // Remove the selected option, or the first one if none is selected
+                    const selectedIndex = colorSelect.selectedIndex;
+                    colorSelect.remove(selectedIndex);
+                } else {
+                    alert('No hay colores para eliminar.');
+                }
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <p>6. Al poner el mouse encima de la siguiente imagen, genera dos números aleatorios entre 300 y 600 para el width y height de una imagen. Reemplaza la imagen de placeholder por otra similar con el tamaño random que generaste. El evento solo se dispara cuando el mouse entra en la imagen.</p>
+        <img id="imagenGato" src="http://cataas.com/200/300">
+        
+        <script>
+            // Exercise 6: Change image size randomly on mouse hover
+            document.getElementById('imagenGato').addEventListener('mouseenter', function() {
+                // Generate random width and height between 300 and 600
+                const randomWidth = Math.floor(Math.random() * 301) + 300;  // Random number between 300-600
+                const randomHeight = Math.floor(Math.random() * 301) + 300; // Random number between 300-600
+                
+                // Update image source with new dimensions
+                // PlaceKitten generates cat images with specified dimensions
+                this.src = `http://cataas.com/cat?width=${randomWidth}&height=${randomHeight}&t=${Date.now()}`;
+                
+                // Also update the actual element dimensions to match the new image
+                this.style.width = `${randomWidth}px`;
+                this.style.height = `${randomHeight}px`;
+                
+                // Log the new dimensions for debugging
+                console.log(`New image dimensions: ${randomWidth}x${randomHeight}`);
+            });
+        </script>
+    </div>
+
+    <div class="container">
+        <h2>Conclusiones</h2>
+
+        <h4>Experiencia general</h4>
+            <p>En general, esta actividad me hizo ver las increíbles capacidades que tiene la IA. 
+                Sobre todo me impresionó su capacidad para conectar varios archivos HTML y css, 
+                y manipularlos de la mejor manera posible. 
+                Sin embargo, considero que en muchas ocasiones se confundía porque le pedía varias cosas, 
+                y se le olvidaba responder las preguntas que le hacía.
+            </p>
+        <h4>¿Cuándo y para qué usarías ChatGPT y cuándo Copilot?</h4>
+            <p>
+                Usaría ChatGPT para tareas sobre todo de texto y análisis de preguntas y/o búsquedas
+                en internet.
+                Por otro lado, considero que Copilot (Claude específicamente) es más útil
+                para tareas de programación, ya que procesa instrucciones más complejas y, en el caso
+                del uso en VisualStudio, me permite ver varios archivos y analizarlos a la vez.
+            </p>
+        <h4>Ventajas de usar AI para programar</h4>
+            <p>
+                Considero que la ventaja de la IA son que, en primer lugar, ayuda a tener un mayor entendimiento
+                de un tema cuando se analizan sus respuestas. Además, sirve mucho para encontrar errores y soluciones a
+                éstos de manera más rápida. Finalmente, considero que también ayuda mucho a 
+                realizar tareas más complejas y/o repetitivas.
+            </p>
+        <h4>Desventajas de usar AI para programar</h4>
+            <p>
+                Las desventajas de la IA son que muchas veces pueden hacernos más flojos y 
+                que desfavorecen el aprendizaje si no se usa correctamente. Por otro lado,
+                la IA no siempre tiene la respuesta correcta y puede confundirnos.
+            </p>
+    </div>
+
+</body>
+</html>
