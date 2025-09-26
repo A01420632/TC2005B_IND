@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 Guía Completa de HTML - Repaso</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-blog {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .back-to-blog:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #3498db;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: #e74c3c;
+            margin-top: 30px;
+        }
+        
+        .code-block {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre;
+            line-height: 1.5;
+            font-size: 14px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .example {
+            border: 2px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        
+        .highlight {
+            background-color: #f1c40f;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .nav-menu {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .nav-menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            background-color: #3498db;
+        }
+        
+        .form-demo {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .semantic-elements {
+            border: 2px dashed #e74c3c;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .best-practices {
+            background-color: #d5f4e6;
+            border-left: 5px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning {
+            background-color: #ffeaa7;
+            border-left: 5px solid #fdcb6e;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .toc {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .toc ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .toc li {
+            margin: 5px 0;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        
+        .toc a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="Main.html" class="back-to-blog">← Volver al Blog</a>
+        
+        <h1>📖 Guía Completa de HTML - Repaso de Conocimientos</h1>
+        
+        <div class="toc">
+            <h2>📑 Tabla de Contenidos</h2>
+            <ul>
+                <li><a href="#estructura-basica">1. Estructura Básica de HTML</a></li>
+                <li><a href="#elementos-semanticos">2. Elementos Semánticos</a></li>
+                <li><a href="#texto-formato">3. Texto y Formato</a></li>
+                <li><a href="#enlaces-navegacion">4. Enlaces y Navegación</a></li>
+                <li><a href="#listas">5. Listas</a></li>
+                <li><a href="#imagenes-multimedia">6. Imágenes y Multimedia</a></li>
+                <li><a href="#tablas">7. Tablas</a></li>
+                <li><a href="#formularios">8. Formularios</a></li>
+                <li><a href="#css-layout">9. CSS y Layout</a></li>
+                <li><a href="#css-grid">10. CSS Grid</a></li>
+                <li><a href="#dom-javascript">11. DOM y JavaScript</a></li>
+                <li><a href="#buenas-practicas">12. Buenas Prácticas</a></li>
+            </ul>
+        </div>
+
+        <section id="estructura-basica">
+            <h2>1. 🏗️ Estructura Básica de HTML</h2>
+            
+            <h3>Documento HTML Básico</h3>
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi Página Web&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido de la página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+            
+            <div class="example">
+                <h4>Elementos Importantes del Head:</h4>
+                <ul>
+                    <li><span class="highlight">&lt;!DOCTYPE html&gt;</span>: Declara el tipo de documento HTML5</li>
+                    <li><span class="highlight">&lt;meta charset="UTF-8"&gt;</span>: Codificación de caracteres</li>
+                    <li><span class="highlight">&lt;meta name="viewport"&gt;</span>: Configuración para dispositivos móviles</li>
+                    <li><span class="highlight">&lt;title&gt;</span>: Título que aparece en la pestaña del navegador</li>
+                    <li><span class="highlight">&lt;link&gt;</span>: Enlace a hojas de estilo CSS</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="elementos-semanticos">
+            <h2>2. 🏷️ Elementos Semánticos</h2>
+            
+            <div class="semantic-elements">
+                <h3>Estructura Semántica</h3>
+                <div class="code-block">
+&lt;header&gt;
+    &lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#inicio"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#acerca"&gt;Acerca&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contacto"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Título del Artículo&lt;/h2&gt;
+        &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Contenido Relacionado&lt;/h3&gt;
+        &lt;p&gt;Información adicional...&lt;/p&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;&copy; 2024 Mi Sitio Web&lt;/p&gt;
+&lt;/footer&gt;
+                </div>
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Elemento</th>
+                    <th>Propósito</th>
+                    <th>Ejemplo de Uso</th>
+                </tr>
+                <tr>
+                    <td>&lt;header&gt;</td>
+                    <td>Encabezado de página o sección</td>
+                    <td>Logo, navegación principal</td>
+                </tr>
+                <tr>
+                    <td>&lt;nav&gt;</td>
+                    <td>Enlaces de navegación</td>
+                    <td>Menú principal, breadcrumbs</td>
+                </tr>
+                <tr>
+                    <td>&lt;main&gt;</td>
+                    <td>Contenido principal único</td>
+                    <td>Contenido central de la página</td>
+                </tr>
+                <tr>
+                    <td>&lt;article&gt;</td>
+                    <td>Contenido independiente</td>
+                    <td>Post de blog, noticia</td>
+                </tr>
+                <tr>
+                    <td>&lt;section&gt;</td>
+                    <td>Sección temática</td>
+                    <td>Capítulo, agrupación de contenido</td>
+                </tr>
+                <tr>
+                    <td>&lt;aside&gt;</td>
+                    <td>Contenido relacionado</td>
+                    <td>Sidebar, información adicional</td>
+                </tr>
+                <tr>
+                    <td>&lt;footer&gt;</td>
+                    <td>Pie de página</td>
+                    <td>Copyright, enlaces adicionales</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="texto-formato">
+            <h2>3. 📝 Texto y Formato</h2>
+            
+            <h3>Encabezados</h3>
+            <div class="code-block">
+&lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Subtítulo de Nivel 3&lt;/h3&gt;
+&lt;h4&gt;Subtítulo de Nivel 4&lt;/h4&gt;
+&lt;h5&gt;Subtítulo de Nivel 5&lt;/h5&gt;
+&lt;h6&gt;Subtítulo de Nivel 6&lt;/h6&gt;
+            </div>
+            
+            <h3>Formato de Texto</h3>
+            <div class="code-block">
+&lt;p&gt;Este es un párrafo normal.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Texto en negrita&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Texto en cursiva&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;u&gt;Texto subrayado&lt;/u&gt;&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;Texto resaltado&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Texto tachado&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Texto pequeño&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O - Subíndice&lt;/p&gt;
+&lt;p&gt;E=mc&lt;sup&gt;2&lt;/sup&gt; - Superíndice&lt;/p&gt;
+            </div>
+            
+            <div class="example">
+                <h4>Resultado Visual:</h4>
+                <p>Este es un párrafo normal.</p>
+                <p><strong>Texto en negrita</strong></p>
+                <p><em>Texto en cursiva</em></p>
+                <p><u>Texto subrayado</u></p>
+                <p><mark>Texto resaltado</mark></p>
+                <p><del>Texto tachado</del></p>
+                <p><small>Texto pequeño</small></p>
+                <p>H<sub>2</sub>O - Subíndice</p>
+                <p>E=mc<sup>2</sup> - Superíndice</p>
+            </div>
+            
+            <h3>Bloques de Código y Citas</h3>
+            <div class="code-block">
+&lt;blockquote&gt;
+    Esta es una cita larga que se destaca del texto principal.
+&lt;/blockquote&gt;
+
+&lt;code&gt;código inline&lt;/code&gt;
+
+&lt;pre&gt;
+    &lt;code&gt;
+        function saludar() {
+            console.log("¡Hola Mundo!");
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+            </div>
+        </section>
+
+        <section id="enlaces-navegacion">
+            <h2>4. 🔗 Enlaces y Navegación</h2>
+            
+            <h3>Tipos de Enlaces</h3>
+            <div class="code-block">
+&lt;!-- Enlace externo --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Google&lt;/a&gt;
+
+&lt;!-- Enlace interno a otra página --&gt;
+&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+
+&lt;!-- Enlace a sección en la misma página --&gt;
+&lt;a href="#seccion1"&gt;Ir a Sección 1&lt;/a&gt;
+
+&lt;!-- Enlace de email --&gt;
+&lt;a href="mailto:correo@ejemplo.com"&gt;Enviar Email&lt;/a&gt;
+
+&lt;!-- Enlace de teléfono --&gt;
+&lt;a href="tel:+1234567890"&gt;Llamar&lt;/a&gt;
+
+&lt;!-- Enlace de descarga --&gt;
+&lt;a href="archivo.pdf" download&gt;Descargar PDF&lt;/a&gt;
+            </div>
+            
+            <div class="nav-menu">
+                <h4>Ejemplo de Barra de Navegación:</h4>
+                <nav>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#acerca">Acerca de</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </section>
+
+        <section id="listas">
+            <h2>5. 📋 Listas</h2>
+            
+            <div class="example">
+                <h3>Lista No Ordenada (ul)</h3>
+                <div class="code-block">
+&lt;ul&gt;
+    &lt;li&gt;Elemento 1&lt;/li&gt;
+    &lt;li&gt;Elemento 2&lt;/li&gt;
+    &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ul&gt;
+                </div>
+                <ul>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Lista Ordenada (ol)</h3>
+                <div class="code-block">
+&lt;ol&gt;
+    &lt;li&gt;Primer elemento&lt;/li&gt;
+    &lt;li&gt;Segundo elemento&lt;/li&gt;
+    &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ol&gt;
+                </div>
+                <ol>
+                    <li>Primer elemento</li>
+                    <li>Segundo elemento</li>
+                    <li>Tercer elemento</li>
+                </ol>
+            </div>
+            
+            <div class="example">
+                <h3>Lista de Definiciones (dl)</h3>
+                <div class="code-block">
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Lenguaje de marcado para crear páginas web&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Lenguaje para dar estilo a páginas web&lt;/dd&gt;
+&lt;/dl&gt;
+                </div>
+                <dl>
+                    <dt><strong>HTML</strong></dt>
+                    <dd>Lenguaje de marcado para crear páginas web</dd>
+                    
+                    <dt><strong>CSS</strong></dt>
+                    <dd>Lenguaje para dar estilo a páginas web</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="imagenes-multimedia">
+            <h2>6. 🖼️ Imágenes y Multimedia</h2>
+            
+            <h3>Imágenes</h3>
+            <div class="code-block">
+&lt;!-- Imagen básica --&gt;
+&lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+
+&lt;!-- Imagen con dimensiones --&gt;
+&lt;img src="imagen.jpg" alt="Descripción" width="300" height="200"&gt;
+
+&lt;!-- Imagen responsiva --&gt;
+&lt;img src="imagen.jpg" alt="Descripción" style="max-width: 100%; height: auto;"&gt;
+
+&lt;!-- Figura con caption --&gt;
+&lt;figure&gt;
+    &lt;img src="grafico.jpg" alt="Gráfico de ventas"&gt;
+    &lt;figcaption&gt;Fig.1 - Ventas del primer trimestre&lt;/figcaption&gt;
+&lt;/figure&gt;
+            </div>
+            
+            <h3>Video</h3>
+            <div class="code-block">
+&lt;video controls width="400"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Tu navegador no soporta video HTML5.
+&lt;/video&gt;
+            </div>
+            
+            <h3>Audio</h3>
+            <div class="code-block">
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Tu navegador no soporta audio HTML5.
+&lt;/audio&gt;
+            </div>
+        </section>
+
+        <section id="tablas">
+            <h2>7. 📊 Tablas</h2>
+            
+            <div class="code-block">
+&lt;table&gt;
+    &lt;caption&gt;Ventas Mensuales&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Mes&lt;/th&gt;
+            &lt;th&gt;Producto A&lt;/th&gt;
+            &lt;th&gt;Producto B&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Enero&lt;/td&gt;
+            &lt;td&gt;1000&lt;/td&gt;
+            &lt;td&gt;1200&lt;/td&gt;
+            &lt;td&gt;2200&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Febrero&lt;/td&gt;
+            &lt;td&gt;1100&lt;/td&gt;
+            &lt;td&gt;1300&lt;/td&gt;
+            &lt;td&gt;2400&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Total&lt;/td&gt;
+            &lt;td&gt;2100&lt;/td&gt;
+            &lt;td&gt;2500&lt;/td&gt;
+            &lt;td&gt;4600&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+            </div>
+            
+            <table>
+                <caption><strong>Ejemplo de Tabla</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Producto A</th>
+                        <th>Producto B</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Enero</td>
+                        <td>1000</td>
+                        <td>1200</td>
+                        <td>2200</td>
+                    </tr>
+                    <tr>
+                        <td>Febrero</td>
+                        <td>1100</td>
+                        <td>1300</td>
+                        <td>2400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="formularios">
+            <h2>8. 📝 Formularios</h2>
+            
+            <div class="form-demo">
+                <h3>Formulario Completo</h3>
+                <div class="code-block">
+&lt;form action="/procesar" method="post"&gt;
+    &lt;!-- Campos de texto --&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="telefono"&gt;Teléfono:&lt;/label&gt;
+    &lt;input type="tel" id="telefono" name="telefono"&gt;
+    
+    &lt;label for="fecha"&gt;Fecha:&lt;/label&gt;
+    &lt;input type="date" id="fecha" name="fecha"&gt;
+    
+    &lt;!-- Textarea --&gt;
+    &lt;label for="comentarios"&gt;Comentarios:&lt;/label&gt;
+    &lt;textarea id="comentarios" name="comentarios" rows="4"&gt;&lt;/textarea&gt;
+    
+    &lt;!-- Select --&gt;
+    &lt;label for="pais"&gt;País:&lt;/label&gt;
+    &lt;select id="pais" name="pais"&gt;
+        &lt;option value=""&gt;Selecciona un país&lt;/option&gt;
+        &lt;option value="mx"&gt;México&lt;/option&gt;
+        &lt;option value="us"&gt;Estados Unidos&lt;/option&gt;
+        &lt;option value="ca"&gt;Canadá&lt;/option&gt;
+    &lt;/select&gt;
+    
+    &lt;!-- Radio buttons --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Género:&lt;/legend&gt;
+        &lt;input type="radio" id="masculino" name="genero" value="masculino"&gt;
+        &lt;label for="masculino"&gt;Masculino&lt;/label&gt;
+        
+        &lt;input type="radio" id="femenino" name="genero" value="femenino"&gt;
+        &lt;label for="femenino"&gt;Femenino&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;!-- Checkboxes --&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Intereses:&lt;/legend&gt;
+        &lt;input type="checkbox" id="tecnologia" name="intereses" value="tecnologia"&gt;
+        &lt;label for="tecnologia"&gt;Tecnología&lt;/label&gt;
+        
+        &lt;input type="checkbox" id="deportes" name="intereses" value="deportes"&gt;
+        &lt;label for="deportes"&gt;Deportes&lt;/label&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;!-- Botones --&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+    &lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;/form&gt;
+                </div>
+                
+                <form style="display: grid; gap: 10px; max-width: 400px;">
+                    <label for="demo-nombre">Nombre:</label>
+                    <input type="text" id="demo-nombre" name="nombre" placeholder="Tu nombre">
+                    
+                    <label for="demo-email">Email:</label>
+                    <input type="email" id="demo-email" name="email" placeholder="tu@email.com">
+                    
+                    <button type="submit" style="background-color: #3498db; color: white; padding: 10px; border: none; border-radius: 5px;">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="css-layout">
+            <h2>9. 🎨 CSS y Layout</h2>
+            
+            <h3>Vinculación de CSS</h3>
+            <div class="code-block">
+&lt;!-- CSS Externo (recomendado) --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+
+&lt;!-- CSS Interno --&gt;
+&lt;style&gt;
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+&lt;/style&gt;
+
+&lt;!-- CSS Inline --&gt;
+&lt;div style="color: red; font-size: 18px;"&gt;Texto rojo&lt;/div&gt;
+            </div>
+            
+            <h3>Selectores CSS Básicos</h3>
+            <div class="code-block">
+/* Selector de elemento */
+h1 {
+    color: blue;
+}
+
+/* Selector de clase */
+.mi-clase {
+    background-color: yellow;
+}
+
+/* Selector de ID */
+#mi-id {
+    font-weight: bold;
+}
+
+/* Selector descendiente */
+.container p {
+    line-height: 1.5;
+}
+
+/* Selector de pseudoclase */
+a:hover {
+    color: red;
+}
+            </div>
+            
+            <h3>Flexbox</h3>
+            <div class="code-block">
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+}
+            </div>
+        </section>
+
+        <section id="css-grid">
+            <h2>10. 📐 CSS Grid</h2>
+            
+            <div class="code-block">
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Elemento que ocupa 2 columnas */
+.grid-item-span {
+    grid-column: span 2;
+}
+
+/* Posicionamiento específico */
+.grid-header {
+    grid-column: 1 / -1;
+    background-color: #2c3e50;
+}
+            </div>
+            
+            <div class="example">
+                <h4>Ejemplo Visual de Grid:</h4>
+                <div class="grid-demo">
+                    <div class="grid-item">Item 1</div>
+                    <div class="grid-item">Item 2</div>
+                    <div class="grid-item">Item 3</div>
+                    <div class="grid-item">Item 4</div>
+                    <div class="grid-item">Item 5</div>
+                    <div class="grid-item">Item 6</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dom-javascript">
+            <h2>11. ⚡ DOM y JavaScript</h2>
+            
+            <h3>¿Qué es el DOM?</h3>
+            <p>El DOM (Document Object Model) es una representación estructurada en forma de árbol de un documento HTML que permite a JavaScript acceder y manipular el contenido, estructura y estilos de una página web.</p>
+            
+            <h3>Acceso a Elementos del DOM</h3>
+            <div class="code-block">
+// Por ID
+const elemento = document.getElementById('mi-id');
+
+// Por clase
+const elementos = document.getElementsByClassName('mi-clase');
+
+// Por etiqueta
+const parrafos = document.getElementsByTagName('p');
+
+// Selectores CSS (modernos)
+const elemento = document.querySelector('#mi-id');
+const elementos = document.querySelectorAll('.mi-clase');
+            </div>
+            
+            <h3>Manipulación del DOM</h3>
+            <div class="code-block">
+// Cambiar contenido
+elemento.innerHTML = 'Nuevo contenido';
+elemento.textContent = 'Solo texto';
+
+// Cambiar atributos
+elemento.setAttribute('class', 'nueva-clase');
+elemento.src = 'nueva-imagen.jpg';
+
+// Cambiar estilos
+elemento.style.color = 'red';
+elemento.style.fontSize = '20px';
+
+// Agregar/quitar clases
+elemento.classList.add('nueva-clase');
+elemento.classList.remove('clase-antigua');
+elemento.classList.toggle('activo');
+
+// Crear nuevos elementos
+const nuevoDiv = document.createElement('div');
+nuevoDiv.textContent = 'Nuevo elemento';
+document.body.appendChild(nuevoDiv);
+            </div>
+            
+            <h3>Eventos</h3>
+            <div class="code-block">
+// Event listener
+button.addEventListener('click', function() {
+    alert('¡Botón clickeado!');
+});
+
+// Múltiples eventos
+element.addEventListener('mouseover', mostrarTooltip);
+element.addEventListener('mouseout', ocultarTooltip);
+
+// Prevenir comportamiento por defecto
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    // Validar formulario
+});
+            </div>
+        </section>
+
+        <section id="buenas-practicas">
+            <h2>12. ✅ Buenas Prácticas</h2>
+            
+            <div class="best-practices">
+                <h3>📋 Estructura y Semántica</h3>
+                <ul>
+                    <li>Usa elementos semánticos apropiados (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;)</li>
+                    <li>Mantén una jerarquía lógica de encabezados (H1 → H2 → H3)</li>
+                    <li>Usa un solo &lt;h1&gt; por página</li>
+                    <li>Siempre incluye el atributo alt en imágenes</li>
+                    <li>Asocia correctamente labels con inputs en formularios</li>
+                </ul>
+            </div>
+            
+            <div class="best-practices">
+                <h3>🎯 Accesibilidad</h3>
+                <ul>
+                    <li>Usa colores con suficiente contraste</li>
+                    <li>Proporciona alternativas de texto para contenido no textual</li>
+                    <li>Haz que el sitio sea navegable con teclado</li>
+                    <li>Usa ARIA labels cuando sea necesario</li>
+                    <li>Estructura el contenido de manera lógica</li>
+                </ul>
+            </div>
+            
+            <div class="best-practices">
+                <h3>📱 Responsividad</h3>
+                <ul>
+                    <li>Incluye la meta tag viewport</li>
+                    <li>Usa unidades relativas (%, em, rem, vw, vh)</li>
+                    <li>Implementa media queries para diferentes dispositivos</li>
+                    <li>Diseña con mobile-first approach</li>
+                    <li>Optimiza imágenes para diferentes resoluciones</li>
+                </ul>
+            </div>
+            
+            <div class="best-practices">
+                <h3>⚡ Rendimiento</h3>
+                <ul>
+                    <li>Minimiza el código HTML, CSS y JavaScript</li>
+                    <li>Optimiza y comprime imágenes</li>
+                    <li>Usa carga lazy para imágenes</li>
+                    <li>Minimiza las peticiones HTTP</li>
+                    <li>Usa CSS y JS externos en lugar de inline</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <h3>⚠️ Errores Comunes a Evitar</h3>
+                <ul>
+                    <li>No cerrar etiquetas HTML</li>
+                    <li>Usar elementos de bloque dentro de elementos inline</li>
+                    <li>Duplicar IDs en la misma página</li>
+                    <li>No validar formularios</li>
+                    <li>Usar tablas para layout (usar CSS Grid/Flexbox)</li>
+                    <li>No incluir DOCTYPE</li>
+                    <li>Mezclar contenido y presentación</li>
+                </ul>
+            </div>
+            
+            <h3>🔧 Herramientas Útiles</h3>
+            <div class="example">
+                <ul>
+                    <li><strong>Validadores:</strong> W3C Markup Validator, CSS Validator</li>
+                    <li><strong>Desarrollo:</strong> Developer Tools del navegador</li>
+                    <li><strong>Accesibilidad:</strong> WAVE, axe DevTools</li>
+                    <li><strong>Rendimiento:</strong> Lighthouse, PageSpeed Insights</li>
+                    <li><strong>Diseño Responsivo:</strong> Responsive Design Mode</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎓 Resumen de Conceptos Clave</h2>
+            
+            <div class="example">
+                <h3>📚 Lo que has aprendido:</h3>
+                <ul>
+                    <li><strong>Estructura básica:</strong> DOCTYPE, html, head, body</li>
+                    <li><strong>Elementos semánticos:</strong> header, nav, main, article, section, aside, footer</li>
+                    <li><strong>Contenido:</strong> textos, imágenes, enlaces, listas, tablas</li>
+                    <li><strong>Formularios:</strong> inputs, labels, validación</li>
+                    <li><strong>CSS:</strong> selectores, propiedades, layouts</li>
+                    <li><strong>CSS Grid:</strong> sistema de rejillas moderno</li>
+                    <li><strong>JavaScript/DOM:</strong> manipulación dinámica del contenido</li>
+                    <li><strong>Buenas prácticas:</strong> accesibilidad, rendimiento, semántica</li>
+                </ul>
+            </div>
+            
+            <div class="best-practices">
+                <h3>🚀 Siguiente Nivel</h3>
+                <p>Para continuar tu aprendizaje, considera profundizar en:</p>
+                <ul>
+                    <li>Frameworks CSS (Bootstrap, Tailwind)</li>
+                    <li>Preprocesadores CSS (Sass, Less)</li>
+                    <li>JavaScript avanzado y frameworks (React, Vue)</li>
+                    <li>Herramientas de desarrollo (Webpack, Vite)</li>
+                    <li>APIs y conectividad con backend</li>
+                    <li>PWAs (Progressive Web Apps)</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #3498db; text-align: center;">
+            <h3>📖 Tu Guía Completa de HTML</h3>
+            <p>Creada basándose en todos los proyectos y conceptos que has trabajado.</p>
+            <p><em>Mantén esta guía como referencia para repasar y consultar conceptos cuando lo necesites.</em></p>
+            <p style="font-size: 12px; color: #7f8c8d;">© 2024 - Guía de repaso personal</p>
+        </footer>
+    </div>
+    
+    <!-- JavaScript para funcionalidad adicional -->
+    <script>
+        // Scroll suave para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Agregar botón de volver arriba
+        const backToTopButton = document.createElement('button');
+        backToTopButton.innerHTML = '↑';
+        backToTopButton.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        `;
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.body.appendChild(backToTopButton);
+        
+        // Mostrar/ocultar botón según scroll
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
